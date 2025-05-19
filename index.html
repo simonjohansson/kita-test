@@ -16,8 +16,10 @@
                 --primary: #8BC34A;
                 --secondary: #87C1C2;
                 --accent: #f9e45b;
-                --light: #fffbf0;
+                --light: #f0eeea;
                 --dark: #f9e45b;
+
+                --max-width: 1170px;
             }
 
             body {
@@ -36,7 +38,7 @@
             }
             header h1 {
                 font-family: 'Barriecito', sans-serif;
-                color: white;
+                color: var(--light);
                 text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
             }
             nav {
@@ -46,7 +48,7 @@
             }
             nav a {
                 text-decoration: none;
-                color: white;
+                color: var(--light);
                 font-weight: bold;
                 transition: all 0.3s ease;
             }
@@ -59,7 +61,7 @@
                 margin-bottom: 20px;
             }
             .content {
-                max-width: 1170px;
+                max-width: var(--max-width);
                 text-align: left;
                 margin-left: auto;
                 margin-right: auto;
@@ -70,10 +72,14 @@
                 margin-bottom: 20px;
                 text-align: center;
             }
+            hr {
+                border: 1px solid var(--secondary);
+                max-width: var(--max-width);
+            }
             .hero {
                 background-color: var(--secondary);
                 padding: 50px 20px;
-                color: white;
+                color: var(--light);
             }
             .personnel {
                 display: flex;
@@ -88,7 +94,7 @@
                 padding: 15px;
                 width: 180px;
                 text-align: center;
-                background-color: white;
+                background-color: var(--light);
                 box-shadow: 0 6px 12px rgba(0,0,0,0.1);
                 transition: transform 0.3s ease;
             }
@@ -102,7 +108,7 @@
                 background-color: var(--primary);
                 text-align: center;
                 padding: 20px;
-                color: white;
+                color: var(--light);
             }
 
             footer h2 {
@@ -116,7 +122,7 @@
 
                 a {
                     text-decoration: none;
-                    color: white;
+                    color: var(--light);
                     font-weight: bold;
                     transition: all 0.3s ease;
                 }
@@ -145,7 +151,7 @@
                     .icon {
                         float: right;
                         display: block;
-                        color: white;
+                        color: var(--light);
                         background-color: var(--secondary);
                         border-radius: 50%;
                         width: 40px;
@@ -195,7 +201,6 @@
                 </a>
             </>
         </header>
-
         <section id="kinderladen" class="hero">
             <div class="content">
                 <h2>Herzlich Willkommen im Kinderladen „Klein im Hain“ in Friedrichshain!</h2>
@@ -213,7 +218,6 @@
                 </div>
             </div>
         </section>
-
         <section id="team">
             <div class="content">
                 <h2>Das Team</h2>
@@ -263,7 +267,7 @@
                 </p>
             </div>
         </section>
-
+        <hr />
         <section id="raume">
             <div class="content">
                 <h2>Unsere Räume</h2>
@@ -281,7 +285,7 @@
                 </p>
             </div>
         </section>
-
+        <hr />
         <section id="platze">
             <div class="content">
                 <h2>Freie Plätze</h2>
@@ -299,7 +303,7 @@
                 </p>
             </div>
         </section>
-
+        <hr />
         <section id="praktikum">
             <div class="content">
                 <h2>Praktikum/FSJ</h2>
@@ -317,7 +321,7 @@
                 </p>
             </div>
         </section>
-
+        <hr />
         <section id="verein">
             <div class="content">
                 <h2>Der Verein</h2>
