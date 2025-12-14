@@ -124,6 +124,29 @@
         <section id="raume">
             <div class="content">
                 <h2>Unsere Räume</h2>
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <img src="img/PXL_20251211_091810578-1200.webp" alt="Raum" class="carousel-item active">
+                        <img src="img/PXL_20251211_091830995-1200.webp" alt="Raum" class="carousel-item">
+                        <img src="img/PXL_20251211_091912811-1200.webp" alt="Raum" class="carousel-item">
+                        <img src="img/PXL_20251211_091927692-1200.webp" alt="Raum" class="carousel-item">
+                        <img src="img/PXL_20251211_092020722-1200.webp" alt="Raum" class="carousel-item">
+                        <img src="img/PXL_20251211_092211778-1200.webp" alt="Raum" class="carousel-item">
+                        <img src="img/PXL_20251211_092221755-1200.webp" alt="Raum" class="carousel-item">
+                        <img src="img/PXL_20251211_092304120-1200.webp" alt="Raum" class="carousel-item">
+                        <img src="img/PXL_20251211_092402103.MP-1200.webp" alt="Raum" class="carousel-item">
+                        <img src="img/PXL_20251211_092949950-1200.webp" alt="Raum" class="carousel-item">
+                        <img src="img/PXL_20251211_093025056-1200.webp" alt="Raum" class="carousel-item">
+                        <img src="img/PXL_20251211_093043639-1200.webp" alt="Raum" class="carousel-item">
+                        <img src="img/PXL_20251211_093057788-1200.webp" alt="Raum" class="carousel-item">
+                        <img src="img/PXL_20251211_093157993-1200.webp" alt="Raum" class="carousel-item">
+                    </div>
+                    <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+                    <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+                    <div class="carousel-dots"></div>
+                </div>
+                <br />
+                <br />
                 In unserem Kinderladen stehen den Kindern zwei großzügige Räume zur Verfügung, die
                 vielfältige Möglichkeiten zum Entdecken, Spielen und Ausruhen bieten.
                 <br />
@@ -277,5 +300,54 @@
                 x.className = "nav";
             }
         }
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
+        let autoAdvanceTimer;
+
+        // Create dots
+        const dotsContainer = document.querySelector('.carousel-dots');
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'dot';
+            if (i === 0) dot.className += ' active';
+            dot.onclick = () => {
+                showSlide(i);
+                resetTimer();
+            };
+            dotsContainer.appendChild(dot);
+        }
+
+        function showSlide(n) {
+            const dots = document.querySelectorAll('.dot');
+
+            if (n >= totalSlides) {
+                currentSlide = 0;
+            } else if (n < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = n;
+            }
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function moveCarousel(direction) {
+            showSlide(currentSlide + direction);
+            resetTimer();
+        }
+
+        function resetTimer() {
+            clearInterval(autoAdvanceTimer);
+            autoAdvanceTimer = setInterval(() => moveCarousel(1), 5000);
+        }
+
+        // Auto-advance carousel every 5 seconds
+        autoAdvanceTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
     </script>
 </html>
