@@ -5,16 +5,21 @@
     --light: #fff9cf;
     --dark: #f9e45b;
 
-    --max-width: 66.6667vw;
+    --max-width: min(980px, calc(100vw - 40px));
 }
 
 body {
     font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     color: #333;
     background-color: var(--light);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 header {
@@ -24,9 +29,12 @@ header {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-header h1 {
+.site-title {
     font-family: 'Barriecito', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
     color: var(--light);
+    margin: 0.67em 0;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
@@ -65,11 +73,16 @@ section {
     font-size: 18px;
 }
 
+.content h1,
 .content h2 {
     font-family: 'Barriecito', cursive;
     color: var(--dark);
     margin-bottom: 20px;
     text-align: center;
+}
+
+.content h1 {
+    font-size: 2.2em;
 }
 
 hr {
@@ -90,29 +103,54 @@ footer {
     color: var(--light);
 }
 
+footer a {
+    color: var(--light);
+}
+
 footer h2 {
     font-family: 'Barriecito', sans-serif;
+}
+
+address {
+    font-style: normal;
 }
 
 #nav {
     display: flex;
     justify-content: center;
     gap: 20px;
+}
 
-    a {
-        text-decoration: none;
-        color: var(--light);
-        font-weight: bold;
-        transition: all 0.3s ease;
-    }
+#nav a {
+    text-decoration: none;
+    color: var(--light);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
 
-    a:hover {
-        color: var(--accent);
-    }
+#nav a:hover {
+    color: var(--accent);
+}
 
-    .icon {
-        display: none;
-    }
+#nav .icon {
+    border: 0;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-lines {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-lines span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: currentColor;
 }
 
 .carousel {
@@ -201,22 +239,22 @@ footer h2 {
 @media screen and (max-width: 768px) {
     #nav {
         flex-direction: column;
-        a {
-            display: none;
-        }
+    }
 
-        .icon {
-            float: right;
-            display: block;
-            color: var(--light);
-            background-color: var(--secondary);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
+    #nav a {
+        display: none;
+    }
+
+    #nav .icon {
+        display: block;
+        color: var(--light);
+        background-color: var(--secondary);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
     #nav.responsive {

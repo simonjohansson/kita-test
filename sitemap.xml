@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
     <url>
         <loc>https://kleinimhain.de/</loc>
+        <lastmod>2026-06-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://kleinimhain.de/impressum.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
+        <image:image>
+            <image:loc>https://kleinimhain.de/img/PXL_20251211_091810578-1200.webp</image:loc>
+            <image:title>Gruppenraum im Kinderladen Klein im Hain</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://kleinimhain.de/img/PXL_20251211_092402103.MP-1200.webp</image:loc>
+            <image:title>Bewegungsraum im Kinderladen Klein im Hain</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://kleinimhain.de/img/PXL_20251211_093157993-1200.webp</image:loc>
+            <image:title>Spielraum im Kinderladen Klein im Hain</image:title>
+        </image:image>
     </url>
 </urlset>
