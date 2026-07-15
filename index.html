@@ -167,20 +167,10 @@
         </script>
     </head>
     <body>
+        <a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
         <header>
             <div class="site-title">Klein im Hain</div>
             <nav id="nav" class="nav" aria-label="Hauptnavigation">
-                <a href="#kinderladen">Unser Kinderladen</a>
-                <a href="#ansatz">Unser Ansatz</a>
-                <a href="#elterninitiative">Unsere Elterninitiative</a>
-                <a href="#team">Das Team</a>
-                <a href="#raume">Unsere Räume</a>
-                <a href="#platze">Freie Plätze</a>
-                <a href="#praktikum">Praktikum / FSJ</a>
-                <a href="#verein">Der Verein</a>
-                <a href="#faq">FAQ</a>
-                <a href="#kontakt">Kontakt</a>
-                <a href="impressum.html">Impressum</a>
                 <button
                     type="button"
                     class="icon"
@@ -194,9 +184,20 @@
                         <span></span>
                     </span>
                 </button>
+                <a href="#kinderladen">Unser Kinderladen</a>
+                <a href="#ansatz">Unser Ansatz</a>
+                <a href="#elterninitiative">Unsere Elterninitiative</a>
+                <a href="#team">Das Team</a>
+                <a href="#raume">Unsere Räume</a>
+                <a href="#platze">Freie Plätze</a>
+                <a href="#praktikum">Praktikum / FSJ</a>
+                <a href="#verein">Der Verein</a>
+                <a href="#faq">FAQ</a>
+                <a href="#kontakt">Kontakt</a>
+                <a href="impressum.html">Impressum</a>
             </nav>
         </header>
-        <main>
+        <main id="main-content" tabindex="-1">
         <section id="kinderladen" class="hero">
             <div class="content">
                 <h1>Kinderladen Klein im Hain in Berlin-Friedrichshain</h1>
@@ -283,24 +284,25 @@
         <section id="raume">
             <div class="content">
                 <h2>Unsere Räume</h2>
-                <div class="carousel">
-                    <div class="carousel-inner">
-                        <img src="img/PXL_20251211_091810578-1200.webp" alt="Heller Gruppenraum im Kinderladen Klein im Hain" class="carousel-item active" width="1200" height="901" loading="lazy" decoding="async">
-                        <img src="img/PXL_20251211_091830995-1200.webp" alt="Spielbereich mit Regalen und Materialien im Kinderladen" class="carousel-item" width="1200" height="1598" loading="lazy" decoding="async">
-                        <img src="img/PXL_20251211_091912811-1200.webp" alt="Lese- und Spielbereich der Kita Klein im Hain" class="carousel-item" width="1200" height="1598" loading="lazy" decoding="async">
-                        <img src="img/PXL_20251211_091927692-1200.webp" alt="Kindgerechter Gruppenraum mit Spielmaterialien" class="carousel-item" width="1200" height="1598" loading="lazy" decoding="async">
-                        <img src="img/PXL_20251211_092211778-1200.webp" alt="Ess- und Aufenthaltsbereich des Kinderladens" class="carousel-item" width="1200" height="1598" loading="lazy" decoding="async">
-                        <img src="img/PXL_20251211_092221755-1200.webp" alt="Bastel- und Forscherecke für Kinder in Friedrichshain" class="carousel-item" width="1200" height="1598" loading="lazy" decoding="async">
-                        <img src="img/PXL_20251211_092402103.MP-1200.webp" alt="Bewegungsraum mit Hochebene im Kinderladen" class="carousel-item" width="1200" height="901" loading="lazy" decoding="async">
-                        <img src="img/PXL_20251211_092949950-1200.webp" alt="Gemütlicher Raum zum Spielen und Ausruhen" class="carousel-item" width="1200" height="901" loading="lazy" decoding="async">
-                        <img src="img/PXL_20251211_093043639-1200.webp" alt="Innenraum der Elterninitiativ-Kita am Rudolfplatz" class="carousel-item" width="1200" height="1598" loading="lazy" decoding="async">
-                        <img src="img/PXL_20251211_093057788-1200.webp" alt="Spielzimmer im Kinderladen Klein im Hain" class="carousel-item" width="1200" height="901" loading="lazy" decoding="async">
-                        <img src="img/PXL_20251211_093157993-1200.webp" alt="Raum für Rollenspiele und Bewegung in der Kita" class="carousel-item" width="1200" height="901" loading="lazy" decoding="async">
+                <section class="carousel" aria-roledescription="Karussell" aria-label="Bilder unserer Räume">
+                    <div id="carousel-slides" class="carousel-inner">
+                        <img src="img/PXL_20251211_091810578-1200.webp" alt="Heller Gruppenraum im Kinderladen Klein im Hain" class="carousel-item active" aria-hidden="false" width="1200" height="901" loading="lazy" decoding="async">
+                        <img src="img/PXL_20251211_091830995-1200.webp" alt="Spielbereich mit Regalen und Materialien im Kinderladen" class="carousel-item" aria-hidden="true" width="1200" height="1598" loading="lazy" decoding="async">
+                        <img src="img/PXL_20251211_091912811-1200.webp" alt="Lese- und Spielbereich der Kita Klein im Hain" class="carousel-item" aria-hidden="true" width="1200" height="1598" loading="lazy" decoding="async">
+                        <img src="img/PXL_20251211_091927692-1200.webp" alt="Kindgerechter Gruppenraum mit Spielmaterialien" class="carousel-item" aria-hidden="true" width="1200" height="1598" loading="lazy" decoding="async">
+                        <img src="img/PXL_20251211_092211778-1200.webp" alt="Ess- und Aufenthaltsbereich des Kinderladens" class="carousel-item" aria-hidden="true" width="1200" height="1598" loading="lazy" decoding="async">
+                        <img src="img/PXL_20251211_092221755-1200.webp" alt="Bastel- und Forscherecke für Kinder in Friedrichshain" class="carousel-item" aria-hidden="true" width="1200" height="1598" loading="lazy" decoding="async">
+                        <img src="img/PXL_20251211_092402103.MP-1200.webp" alt="Bewegungsraum mit Hochebene im Kinderladen" class="carousel-item" aria-hidden="true" width="1200" height="901" loading="lazy" decoding="async">
+                        <img src="img/PXL_20251211_092949950-1200.webp" alt="Gemütlicher Raum zum Spielen und Ausruhen" class="carousel-item" aria-hidden="true" width="1200" height="901" loading="lazy" decoding="async">
+                        <img src="img/PXL_20251211_093043639-1200.webp" alt="Innenraum der Elterninitiativ-Kita am Rudolfplatz" class="carousel-item" aria-hidden="true" width="1200" height="1598" loading="lazy" decoding="async">
+                        <img src="img/PXL_20251211_093057788-1200.webp" alt="Spielzimmer im Kinderladen Klein im Hain" class="carousel-item" aria-hidden="true" width="1200" height="901" loading="lazy" decoding="async">
+                        <img src="img/PXL_20251211_093157993-1200.webp" alt="Raum für Rollenspiele und Bewegung in der Kita" class="carousel-item" aria-hidden="true" width="1200" height="901" loading="lazy" decoding="async">
                     </div>
-                    <button class="carousel-button prev" onclick="moveCarousel(-1)" aria-label="Vorheriges Bild">&#10094;</button>
-                    <button class="carousel-button next" onclick="moveCarousel(1)" aria-label="Nächstes Bild">&#10095;</button>
+                    <p id="carousel-status" class="sr-only" aria-live="polite">Bild 1 von 11: Heller Gruppenraum im Kinderladen Klein im Hain</p>
+                    <button type="button" class="carousel-button prev" onclick="moveCarousel(-1)" aria-label="Vorheriges Bild" aria-controls="carousel-slides">&#10094;</button>
+                    <button type="button" class="carousel-button next" onclick="moveCarousel(1)" aria-label="Nächstes Bild" aria-controls="carousel-slides">&#10095;</button>
                     <div class="carousel-dots"></div>
-                </div>
+                </section>
                 <h3>In unserem Kinderladen stehen den Kindern zwei großzügige Räume zur Verfügung, die
                 vielfältige Möglichkeiten zum Entdecken, Spielen und Ausruhen bieten.</h3>
                 <i>Raum 1 – Gemeinsamkeit, Kreativität und Forschergeist</i>
@@ -495,22 +497,28 @@
             var button = x.querySelector(".icon");
             var isOpen = x.classList.toggle("responsive");
             button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            button.setAttribute("aria-label", isOpen ? "Navigation schließen" : "Navigation öffnen");
         }
 
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-item');
         const totalSlides = slides.length;
-        let autoAdvanceTimer;
+        const carouselStatus = document.getElementById('carousel-status');
 
         // Create dots
         const dotsContainer = document.querySelector('.carousel-dots');
         for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement('span');
+            const dot = document.createElement('button');
+            dot.type = 'button';
             dot.className = 'dot';
-            if (i === 0) dot.className += ' active';
+            dot.setAttribute('aria-label', `Bild ${i + 1} von ${totalSlides} anzeigen`);
+            dot.setAttribute('aria-controls', 'carousel-slides');
+            if (i === 0) {
+                dot.className += ' active';
+                dot.setAttribute('aria-current', 'true');
+            }
             dot.onclick = () => {
                 showSlide(i);
-                resetTimer();
             };
             dotsContainer.appendChild(dot);
         }
@@ -526,25 +534,25 @@
                 currentSlide = n;
             }
 
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.setAttribute('aria-hidden', 'true');
+            });
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+                dot.removeAttribute('aria-current');
+            });
 
             slides[currentSlide].classList.add('active');
+            slides[currentSlide].setAttribute('aria-hidden', 'false');
             dots[currentSlide].classList.add('active');
+            dots[currentSlide].setAttribute('aria-current', 'true');
+            carouselStatus.textContent = `Bild ${currentSlide + 1} von ${totalSlides}: ${slides[currentSlide].alt}`;
         }
 
         function moveCarousel(direction) {
             showSlide(currentSlide + direction);
-            resetTimer();
         }
-
-        function resetTimer() {
-            clearInterval(autoAdvanceTimer);
-            autoAdvanceTimer = setInterval(() => moveCarousel(1), 5000);
-        }
-
-        // Auto-advance carousel every 5 seconds
-        autoAdvanceTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
         </script>
     </body>
 </html>

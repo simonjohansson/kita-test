@@ -33,20 +33,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Barriecito:wght@400;700&amp;family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet">
     </head>
     <body>
+        <a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
         <header>
             <div class="site-title">Klein im Hain</div>
             <nav id="nav" class="nav" aria-label="Hauptnavigation">
-                <a href="index.html#kinderladen">Unser Kinderladen</a>
-                <a href="index.html#ansatz">Unser Ansatz</a>
-                <a href="index.html#elterninitiative">Unsere Elterninitiative</a>
-                <a href="index.html#team">Das Team</a>
-                <a href="index.html#raume">Unsere Räume</a>
-                <a href="index.html#platze">Freie Plätze</a>
-                <a href="index.html#praktikum">Praktikum / FSJ</a>
-                <a href="index.html#verein">Der Verein</a>
-                <a href="index.html#faq">FAQ</a>
-                <a href="index.html#kontakt">Kontakt</a>
-                <a href="impressum.html">Impressum</a>
                 <button
                     type="button"
                     class="icon"
@@ -60,9 +50,20 @@
                         <span></span>
                     </span>
                 </button>
+                <a href="index.html#kinderladen">Unser Kinderladen</a>
+                <a href="index.html#ansatz">Unser Ansatz</a>
+                <a href="index.html#elterninitiative">Unsere Elterninitiative</a>
+                <a href="index.html#team">Das Team</a>
+                <a href="index.html#raume">Unsere Räume</a>
+                <a href="index.html#platze">Freie Plätze</a>
+                <a href="index.html#praktikum">Praktikum / FSJ</a>
+                <a href="index.html#verein">Der Verein</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="index.html#kontakt">Kontakt</a>
+                <a href="impressum.html">Impressum</a>
             </nav>
         </header>
-        <main>
+        <main id="main-content" tabindex="-1">
         <section>
             <div class="content">
                 <h1>Impressum</h1>
@@ -95,6 +96,7 @@
             var button = x.querySelector(".icon");
             var isOpen = x.classList.toggle("responsive");
             button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            button.setAttribute("aria-label", isOpen ? "Navigation schließen" : "Navigation öffnen");
         }
         </script>
     </body>
