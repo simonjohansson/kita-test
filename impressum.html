@@ -23,7 +23,7 @@
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="901" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="theme-color" content="#8BC34A" />
+        <meta name="theme-color" content="#3F6B45" />
         <title>Impressum | Klein im Hain</title>
         <link rel="canonical" href="https://kleinimhain.de/impressum.html" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -35,14 +35,17 @@
     <body>
         <a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
         <header>
-            <div class="site-title">Klein im Hain</div>
-            <nav id="nav" class="nav" aria-label="Hauptnavigation">
+            <div class="header-bar">
+                <a class="site-title" href="index.html#kinderladen" aria-label="Klein im Hain - Startseite">
+                    Klein im Hain
+                </a>
                 <button
                     type="button"
                     class="icon"
                     onclick="hamburger()"
                     aria-label="Navigation öffnen"
                     aria-expanded="false"
+                    aria-controls="nav"
                 >
                     <span class="menu-lines" aria-hidden="true">
                         <span></span>
@@ -50,6 +53,8 @@
                         <span></span>
                     </span>
                 </button>
+            </div>
+            <nav id="nav" class="nav" aria-label="Hauptnavigation">
                 <a href="index.html#kinderladen">Unser Kinderladen</a>
                 <a href="index.html#ansatz">Unser Ansatz</a>
                 <a href="index.html#elterninitiative">Unsere Elterninitiative</a>
@@ -93,11 +98,32 @@
         <script>
         function hamburger() {
             var x = document.getElementById("nav");
-            var button = x.querySelector(".icon");
+            var button = document.querySelector(".icon");
             var isOpen = x.classList.toggle("responsive");
             button.setAttribute("aria-expanded", isOpen ? "true" : "false");
             button.setAttribute("aria-label", isOpen ? "Navigation schließen" : "Navigation öffnen");
         }
+
+        document.querySelectorAll('#nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                var nav = document.getElementById('nav');
+                var button = document.querySelector('.icon');
+                nav.classList.remove('responsive');
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-label', 'Navigation öffnen');
+            });
+        });
+
+        document.addEventListener('keydown', event => {
+            var nav = document.getElementById('nav');
+            if (event.key === 'Escape' && nav.classList.contains('responsive')) {
+                var button = document.querySelector('.icon');
+                nav.classList.remove('responsive');
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-label', 'Navigation öffnen');
+                button.focus();
+            }
+        });
         </script>
     </body>
 </html>

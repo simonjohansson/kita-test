@@ -10,7 +10,7 @@
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Klein im Hain" />
-        <meta name="theme-color" content="#8BC34A" />
+        <meta name="theme-color" content="#3F6B45" />
         <meta property="og:locale" content="de_DE" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Klein im Hain" />
@@ -169,14 +169,17 @@
     <body>
         <a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
         <header>
-            <div class="site-title">Klein im Hain</div>
-            <nav id="nav" class="nav" aria-label="Hauptnavigation">
+            <div class="header-bar">
+                <a class="site-title" href="#kinderladen" aria-label="Klein im Hain - Startseite">
+                    Klein im Hain
+                </a>
                 <button
                     type="button"
                     class="icon"
                     onclick="hamburger()"
                     aria-label="Navigation öffnen"
                     aria-expanded="false"
+                    aria-controls="nav"
                 >
                     <span class="menu-lines" aria-hidden="true">
                         <span></span>
@@ -184,6 +187,8 @@
                         <span></span>
                     </span>
                 </button>
+            </div>
+            <nav id="nav" class="nav" aria-label="Hauptnavigation">
                 <a href="#kinderladen">Unser Kinderladen</a>
                 <a href="#ansatz">Unser Ansatz</a>
                 <a href="#elterninitiative">Unsere Elterninitiative</a>
@@ -199,31 +204,49 @@
         </header>
         <main id="main-content" tabindex="-1">
         <section id="kinderladen" class="hero">
-            <div class="content">
-                <h1>Kinderladen Klein im Hain in Berlin-Friedrichshain</h1>
-                <div>
-                    Unser Kinderladen liegt <b>im Herzen des familiären Rudolfkiezes in Berlin Friedrichshain</b>,
-                    direkt gegenüber eines großen Spielplatzes, der den Kindern viel Raum für Bewegung und
-                    Spiel im Freien bietet. In einer warmen und liebevollen Atmosphäre betreuen wir <b>rund 20
-                    Kinder im Alter von eins bis sechs Jahren</b>. Unser engagiertes Team aus drei Erzieher*innen
-                    begleitet die Kinder auf ihrem Weg des Lernens und Entdeckens.
-                    <br />
-                    <br />
-                    Die <b>enge Zusammenarbeit mit den Eltern liegt uns sehr am Herzen</b>. Bei uns können Eltern
-                    nicht nur mitgestalten, sondern sollten sich auch aktiv einbringen – sei es durch kreative
-                    Ideen oder tatkräftige Unterstützung. Unser Konzept basiert auf einem respektvollen
-                    Miteinander, das sowohl die Bedürfnisse der Kinder als auch die Wünsche der Eltern in den
-                    Vordergrund stellt. Wir glauben, dass eine starke Partnerschaft zwischen Eltern,
-                    Erzieher*innen und Kindern der beste Weg für eine wertvolle Entwicklung bietet.
-                    <br />
-                    <br />
-                    Wir bieten unseren Kindern <b>täglich vegetarisches Mittagessen</b> aus biologischen, und wenn
-                    möglich, regionalen und saisonalen Zutaten. Das Mittagessen wird von unserem Partner
-                    Smart Cooking geliefert.
-                    <br />
-                    <br />
-                    Kommt vorbei, lernt uns und unsere kleine, lebendige Gemeinschaft kennen – wir freuen uns
-                    darauf, auch deine Familie bei uns willkommen zu heißen!
+            <div class="content hero-layout">
+                <div class="hero-copy">
+                    <h1>Kinderladen Klein im Hain in Berlin-Friedrichshain</h1>
+                    <nav class="hero-actions" aria-label="Direkteinstiege">
+                        <a class="button button-primary" href="#platze">Freie Plätze ansehen</a>
+                        <a class="button button-secondary" href="#kontakt">Kontakt aufnehmen</a>
+                    </nav>
+                </div>
+                <figure class="hero-media">
+                    <img
+                        src="img/PXL_20251211_091810578-1200.webp"
+                        alt="Heller Gruppenraum im Kinderladen Klein im Hain"
+                        width="1200"
+                        height="901"
+                        fetchpriority="high"
+                        decoding="async"
+                    >
+                </figure>
+                <div class="hero-details">
+                    <p>
+                        Unser Kinderladen liegt <b>im Herzen des familiären Rudolfkiezes in Berlin Friedrichshain</b>,
+                        direkt gegenüber eines großen Spielplatzes, der den Kindern viel Raum für Bewegung und
+                        Spiel im Freien bietet. In einer warmen und liebevollen Atmosphäre betreuen wir <b>rund 20
+                        Kinder im Alter von eins bis sechs Jahren</b>. Unser engagiertes Team aus drei Erzieher*innen
+                        begleitet die Kinder auf ihrem Weg des Lernens und Entdeckens.
+                    </p>
+                    <p>
+                        Die <b>enge Zusammenarbeit mit den Eltern liegt uns sehr am Herzen</b>. Bei uns können Eltern
+                        nicht nur mitgestalten, sondern sollten sich auch aktiv einbringen – sei es durch kreative
+                        Ideen oder tatkräftige Unterstützung. Unser Konzept basiert auf einem respektvollen
+                        Miteinander, das sowohl die Bedürfnisse der Kinder als auch die Wünsche der Eltern in den
+                        Vordergrund stellt. Wir glauben, dass eine starke Partnerschaft zwischen Eltern,
+                        Erzieher*innen und Kindern der beste Weg für eine wertvolle Entwicklung bietet.
+                    </p>
+                    <p>
+                        Wir bieten unseren Kindern <b>täglich vegetarisches Mittagessen</b> aus biologischen, und wenn
+                        möglich, regionalen und saisonalen Zutaten. Das Mittagessen wird von unserem Partner
+                        Smart Cooking geliefert.
+                    </p>
+                    <p>
+                        Kommt vorbei, lernt uns und unsere kleine, lebendige Gemeinschaft kennen – wir freuen uns
+                        darauf, auch deine Familie bei uns willkommen zu heißen!
+                    </p>
                 </div>
             </div>
         </section>
@@ -494,11 +517,32 @@
         <script>
         function hamburger() {
             var x = document.getElementById("nav");
-            var button = x.querySelector(".icon");
+            var button = document.querySelector(".icon");
             var isOpen = x.classList.toggle("responsive");
             button.setAttribute("aria-expanded", isOpen ? "true" : "false");
             button.setAttribute("aria-label", isOpen ? "Navigation schließen" : "Navigation öffnen");
         }
+
+        document.querySelectorAll('#nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                var nav = document.getElementById('nav');
+                var button = document.querySelector('.icon');
+                nav.classList.remove('responsive');
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-label', 'Navigation öffnen');
+            });
+        });
+
+        document.addEventListener('keydown', event => {
+            var nav = document.getElementById('nav');
+            if (event.key === 'Escape' && nav.classList.contains('responsive')) {
+                var button = document.querySelector('.icon');
+                nav.classList.remove('responsive');
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-label', 'Navigation öffnen');
+                button.focus();
+            }
+        });
 
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-item');
