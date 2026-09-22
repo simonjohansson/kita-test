@@ -9,7 +9,7 @@
     --muted: #53645b;
     --border: #b8c9bf;
     --shadow: 0 18px 45px rgba(32, 55, 45, 0.12);
-    --content-width: min(760px, calc(100vw - 40px));
+    --content-width: min(880px, calc(100vw - 40px));
     --wide-width: min(1160px, calc(100vw - 40px));
 }
 
@@ -168,11 +168,13 @@ main > section {
 }
 
 .content {
+    width: 100%;
     max-width: var(--content-width);
     margin: 0 auto;
 }
 
 .wide-content {
+    width: 100%;
     max-width: var(--wide-width);
 }
 
@@ -245,7 +247,7 @@ main > section {
     max-width: var(--wide-width);
 }
 
-.hero-intro {
+.hero-copy > p:not(.eyebrow) {
     font-size: 1.08em;
 }
 
@@ -302,18 +304,21 @@ main > section {
 }
 
 .section-intro {
-    max-width: 760px;
-    margin-bottom: 34px;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto 34px;
 }
 
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
 }
 
 .feature-card,
-.text-card,
 .faq-list article {
     padding: 28px;
     background: var(--surface);
@@ -329,10 +334,6 @@ main > section {
 .feature-card h3,
 .faq-list article h3 {
     margin-top: 0;
-}
-
-.text-card {
-    max-width: 820px;
 }
 
 .benefit-list {
@@ -365,24 +366,25 @@ main > section {
     transform: translateY(-50%);
 }
 
-.team-room-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(380px, 0.9fr);
-    gap: clamp(36px, 6vw, 72px);
-    align-items: start;
+.team-copy {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
 }
 
 .room-copy {
-    max-width: 800px;
-    margin-top: 48px;
+    width: 100%;
+    max-width: 880px;
+    margin: 48px auto 0;
 }
 
 .carousel {
-    position: sticky;
-    top: 28px;
-    max-width: 100%;
+    position: relative;
+    top: auto;
+    width: 100%;
+    max-width: 880px;
     padding: 0;
-    margin: 28px 0 0;
+    margin: 44px auto 0;
     overflow: hidden;
     background: var(--primary-dark);
     border: 6px solid var(--surface);
@@ -529,7 +531,7 @@ main > section {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
     gap: 38px;
-    max-width: 960px;
+    max-width: 880px;
     padding: clamp(28px, 5vw, 54px);
     color: var(--text);
     background: var(--surface);
@@ -579,7 +581,7 @@ footer a {
     flex-wrap: wrap;
     justify-content: center;
     gap: 7px 18px;
-    max-width: 920px;
+    max-width: 880px;
     margin: 24px auto;
 }
 
@@ -602,15 +604,13 @@ footer a {
     }
 }
 
-@media screen and (max-width: 900px) {
-    .team-room-layout {
-        grid-template-columns: 1fr;
+@media screen and (min-width: 801px) {
+    #nav a {
+        font-size: 1rem;
     }
 
-    .carousel {
-        position: relative;
-        top: auto;
-        max-width: 720px;
+    .eyebrow {
+        font-size: 0.95rem;
     }
 }
 
@@ -749,7 +749,6 @@ footer a {
     }
 
     .feature-card,
-    .text-card,
     .faq-list article {
         padding: 22px 20px;
     }
