@@ -347,7 +347,7 @@ main > section {
 
 .benefit-list li {
     padding: 18px;
-    background: var(--surface);
+    background: var(--canvas);
     border: 1px solid var(--border);
     border-radius: 14px;
 }
