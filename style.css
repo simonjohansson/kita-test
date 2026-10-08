@@ -9,7 +9,7 @@
     --muted: #53645b;
     --border: #b8c9bf;
     --shadow: 0 18px 45px rgba(32, 55, 45, 0.12);
-    --content-width: min(760px, calc(100vw - 40px));
+    --content-width: min(880px, calc(100vw - 40px));
     --wide-width: min(1160px, calc(100vw - 40px));
 }
 
@@ -115,7 +115,7 @@ header {
 #nav a {
     padding: 4px 0;
     color: #fff;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 700;
     line-height: 1.3;
     text-decoration: none;
@@ -158,23 +158,25 @@ header {
 
 main > section {
     scroll-margin-top: 24px;
-    padding: clamp(54px, 8vw, 92px) 20px;
+    padding: clamp(56px, 8vw, 96px) 20px;
 }
 
-#ansatz,
-#team,
-#platze,
-#verein {
+#alltag,
+#elterninitiative,
+#mitmachen,
+#faq {
     background: var(--surface);
 }
 
-#platze {
-    background: var(--secondary);
-}
-
 .content {
+    width: 100%;
     max-width: var(--content-width);
     margin: 0 auto;
+}
+
+.wide-content {
+    width: 100%;
+    max-width: var(--wide-width);
 }
 
 .content h1,
@@ -188,13 +190,13 @@ main > section {
 }
 
 .content h1 {
-    font-size: clamp(2.55rem, 6vw, 4.7rem);
+    font-size: clamp(2.7rem, 6vw, 4.9rem);
 }
 
 .content h2 {
     position: relative;
     padding-bottom: 0.25em;
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-size: clamp(2.25rem, 5vw, 3.6rem);
 }
 
 .content h2::after {
@@ -209,7 +211,7 @@ main > section {
 }
 
 .content h3 {
-    margin: 1.5em 0 0.65em;
+    margin: 1.45em 0 0.65em;
     color: var(--primary-dark);
     font-size: clamp(1.2rem, 3vw, 1.45rem);
     line-height: 1.35;
@@ -223,42 +225,14 @@ main > section {
     margin-bottom: 0;
 }
 
-.content ul {
-    margin: 1.25em 0 0;
-    padding-left: 1.25em;
-}
-
-.content li {
-    padding-left: 0.35em;
-    margin-bottom: 0.55em;
-}
-
-.content li::marker {
-    color: var(--primary);
-}
-
-.content > i {
-    display: inline-block;
-    margin-top: 1em;
+.content .eyebrow {
+    margin: 0 0 0.8em;
     color: var(--primary-dark);
-    font-size: 1.05em;
-    font-style: normal;
+    font-size: 0.82rem;
     font-weight: 700;
-}
-
-#elterninitiative ul,
-#platze ul {
-    columns: 2 280px;
-    column-gap: 48px;
-}
-
-#elterninitiative li,
-#platze li {
-    break-inside: avoid;
-}
-
-hr {
-    display: none;
+    letter-spacing: 0.13em;
+    line-height: 1.3;
+    text-transform: uppercase;
 }
 
 .hero {
@@ -269,49 +243,34 @@ hr {
 .hero-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(360px, 0.88fr);
-    grid-template-areas:
-        'copy media'
-        'details media';
-    gap: 18px clamp(40px, 6vw, 80px);
-    align-items: start;
+    gap: 40px clamp(40px, 6vw, 80px);
+    align-items: center;
     max-width: var(--wide-width);
 }
 
-.hero-copy {
-    grid-area: copy;
-}
-
-.hero-details {
-    grid-area: details;
-    max-width: 690px;
-}
-
-.hero-details p:first-child {
+.hero-copy > p:not(.eyebrow) {
     font-size: 1.08em;
 }
 
 .hero-media {
-    position: sticky;
-    top: 28px;
-    grid-area: media;
     margin: 0;
 }
 
 .hero-media img {
     display: block;
     width: 100%;
-    min-height: 500px;
-    object-fit: cover;
+    height: auto;
     border: 8px solid var(--surface);
     border-radius: 28px 28px 8px 28px;
     box-shadow: var(--shadow);
 }
 
-.hero-actions {
+.hero-actions,
+.inline-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin: 28px 0 16px;
+    margin: 28px 0 0;
 }
 
 .button {
@@ -344,11 +303,72 @@ hr {
     background: var(--surface);
 }
 
+.section-intro {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto 34px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.feature-card,
+.faq-list article,
+.benefit-list li,
+.facts-grid div {
+    background: var(--canvas);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(32, 55, 45, 0.07);
+}
+
+.feature-card {
+    padding: 28px;
+}
+
+.feature-card h3,
+.faq-list article h3 {
+    margin-top: 0;
+}
+
+.benefit-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    padding: 0;
+    margin: 24px 0 0;
+    list-style: none;
+}
+
+.benefit-list li {
+    padding: 18px;
+}
+
+.team-copy {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.room-copy {
+    width: 100%;
+    max-width: 880px;
+    margin: 48px auto 0;
+}
+
 .carousel {
     position: relative;
-    max-width: 100%;
+    top: auto;
+    width: 100%;
+    max-width: 880px;
     padding: 0;
-    margin: 32px auto 40px;
+    margin: 44px auto 0;
     overflow: hidden;
     background: var(--primary-dark);
     border: 6px solid var(--surface);
@@ -367,7 +387,7 @@ hr {
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease-in-out;
@@ -407,22 +427,19 @@ hr {
 }
 
 .carousel-dots {
-    position: absolute;
-    bottom: 14px;
-    left: 50%;
-    z-index: 10;
     display: flex;
-    gap: 2px;
-    padding: 4px 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 14px;
     background: rgba(32, 55, 45, 0.92);
-    border-radius: 999px;
-    transform: translateX(-50%);
 }
 
 .dot {
     display: inline-flex;
-    width: 26px;
-    height: 26px;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
     align-items: center;
     justify-content: center;
     padding: 0;
@@ -445,6 +462,72 @@ hr {
     background: var(--accent);
 }
 
+.places-section {
+    background: var(--secondary);
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    padding: 0;
+    margin: 20px 0 28px;
+}
+
+.facts-grid div {
+    padding: 18px;
+}
+
+.facts-grid dt {
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.facts-grid dd {
+    margin: 4px 0 0;
+}
+
+.faq-list {
+    display: grid;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.faq-list article {
+    padding: 22px 24px;
+}
+
+.faq-list article p {
+    margin-bottom: 0;
+}
+
+.contact-section {
+    background: var(--primary);
+}
+
+.contact-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+    gap: 38px;
+    max-width: 880px;
+    padding: clamp(28px, 5vw, 54px);
+    color: var(--text);
+    background: var(--canvas);
+    border: 5px solid var(--accent);
+    border-radius: 26px 26px 8px 26px;
+    box-shadow: var(--shadow);
+}
+
+.contact-card address {
+    padding: 24px;
+    background: var(--secondary);
+    border-radius: 16px;
+}
+
+address {
+    font-style: normal;
+}
+
 footer {
     padding: 54px 20px;
     color: #fff;
@@ -453,20 +536,39 @@ footer {
     border-top: 5px solid var(--accent);
 }
 
-footer h2 {
-    margin: 0 0 16px;
+.footer-inner {
+    max-width: var(--wide-width);
+    margin: 0 auto;
+}
+
+.footer-title {
     color: #fff;
     font-family: 'Barriecito', sans-serif;
     font-size: 2.5rem;
+    font-weight: 700;
     line-height: 1.1;
+    text-decoration: none;
 }
 
 footer a {
     color: #fff;
 }
 
-address {
-    font-style: normal;
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px 18px;
+    max-width: 880px;
+    margin: 24px auto;
+}
+
+.footer-nav a {
+    font-weight: 700;
+}
+
+.legal-links {
+    margin-top: 20px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -477,6 +579,16 @@ address {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    #nav a {
+        font-size: 1rem;
+    }
+
+    .content .eyebrow {
+        font-size: 0.95rem;
     }
 }
 
@@ -549,35 +661,29 @@ address {
 
     main > section {
         scroll-margin-top: 68px;
-        padding: 48px 20px;
+        padding: 50px 20px;
     }
 
-    .hero-layout {
+    .hero-layout,
+    .contact-card {
         grid-template-columns: 1fr;
-        grid-template-areas:
-            'copy'
-            'media'
-            'details';
-        gap: 26px;
-    }
-
-    .hero-media {
-        position: static;
     }
 
     .hero-media img {
-        min-height: 0;
-        max-height: 430px;
         border-width: 5px;
         border-radius: 20px 20px 6px 20px;
     }
 
-    .hero-actions {
-        margin-bottom: 0;
+    .feature-grid,
+    .benefit-list {
+        grid-template-columns: 1fr;
+    }
+
+    .facts-grid {
+        grid-template-columns: 1fr;
     }
 
     .carousel {
-        margin-top: 26px;
         border-width: 4px;
         border-radius: 14px;
     }
@@ -586,14 +692,6 @@ address {
         width: 42px;
         height: 42px;
         font-size: 20px;
-    }
-
-    .carousel-button.prev {
-        left: 8px;
-    }
-
-    .carousel-button.next {
-        right: 8px;
     }
 }
 
@@ -609,14 +707,15 @@ address {
     }
 
     .content h1 {
-        font-size: clamp(2.45rem, 13vw, 3.35rem);
+        font-size: clamp(2.55rem, 13vw, 3.4rem);
     }
 
     .content h2 {
         font-size: clamp(2.15rem, 11vw, 3rem);
     }
 
-    .hero-actions {
+    .hero-actions,
+    .inline-actions {
         display: grid;
         grid-template-columns: 1fr;
     }
@@ -625,17 +724,17 @@ address {
         width: 100%;
     }
 
-    .carousel-dots {
-        gap: 0;
+    .feature-card,
+    .faq-list article {
+        padding: 22px 20px;
     }
 
-    .dot {
-        width: 22px;
-        height: 24px;
+    .contact-card {
+        padding: 24px 20px;
     }
 
-    .dot::before {
-        width: 8px;
-        height: 8px;
+    .contact-card address {
+        padding: 18px;
+        overflow-wrap: anywhere;
     }
 }
